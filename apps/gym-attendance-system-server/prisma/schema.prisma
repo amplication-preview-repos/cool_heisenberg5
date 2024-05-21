@@ -1,0 +1,42 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Attendance {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  updatedAt DateTime @updatedAt
+}
+
+model User {
+  createdAt    DateTime @default(now())
+  emailId      String?
+  id           String   @id @default(cuid())
+  mobileNumber String?
+  updatedAt    DateTime @updatedAt
+}
+
+model Subscription {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  updatedAt DateTime @updatedAt
+}
+
+model Staff {
+  createdAt    DateTime @default(now())
+  emailId      String?
+  id           String   @id @default(cuid())
+  mobileNumber String?
+  updatedAt    DateTime @updatedAt
+}
+
+model FaceRecognitionData {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  updatedAt DateTime @updatedAt
+}
